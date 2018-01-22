@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <title>Java In The Site</title>
+    </head>
+    <body>
+        <!--<h1 id="heading"></h1>-->
+        <!--<script>-->
+        <!--    let head = document.getElementById("heading");-->
+        <!--    let name = prompt("Enter Your Name:");-->
+        <!--    if(name === "Dave") {-->
+        <!--        head.textContent = "This is highly irregular Dave";-->
+        <!--    } else if(name === "Krishen") {-->
+        <!--        head.textContent = "WHY ARE YOU HERE?!? I TOLD YOU I DONT HAVE COOKIES!!!";-->
+        <!--    } else if(name === "Matt") {-->
+        <!--        head.textContent = "Yay! Back to Coding!";-->
+        <!--    } else {-->
+        <!--        head.textContent = "Good Afternoon, " + name;-->
+        <!--    }-->
+        <!--</script>-->
+        <button onclick="lightOn()">Turn on the Light</button>
+        
+        <img id="myImage" src="img/bulboff.gif" style="width:150px">
+        
+        <button onclick="lightOff()">Turn off the Light</button>
+        <h2 id="Heading" style="color: red">Switch on the Light Please</h2>
+    <script>
+        function lightOn() {
+            let conOn = confirm("Do you want the light on?")
+            if(conOn === true) {
+                let conOn2 = confirm("Why? Do you want to wast energy?")
+                if(conOn2 === true) {
+                    let conOn3 = confirm("WOW! You relly do! How could you, you monster! Fine! Have it your way!")
+                    if(conOn3 === true) {
+                        document.getElementById('myImage').src='img/bulbon.gif';
+                        document.getElementById('Heading').style.color= "black"
+                        document.getElementById('Heading').style.fontSize= "0.5em"
+                        document.getElementById('Heading').textContent= "Still not happy with you......"
+                    } else {
+                        document.getElementById('myImage').src='img/bulboff.gif';
+                    }
+                } else {
+                    document.getElementById('myImage').src='img/bulboff.gif';
+                }
+            } else {
+                document.getElementById('myImage').src='img/bulboff.gif';
+            }
+        }
+        function lightOff() {
+            let conOff = confirm("Do you want the light off?")
+            if(conOff === true) {
+                let conOff2 = confirm("Are you sure? We went through all that trouble to turn it on!")
+                if(conOff2 === true){
+                    let conOff3 = confirm("Rlly? Are you TRYING to undermind me!? Last Chance to turn back!")
+                    if(conOff3 === true){
+                        let conOff4 = confirm("FINE TURN IT OFF THEN!")
+                        if(conOff4 === true){
+                            document.getElementById('myImage').src='img/bulboff.gif';
+                            document.getElementById('Heading').style.color= "red"
+                            document.getElementById('Heading').style.fontSize= "2.14em"
+                            document.getElementById('Heading').textContent= "Switch on the Light Please"
+                        } else {
+                        document.getElementById('myImage').src='img/bulbon.gif';
+                        }
+                    } else {
+                    document.getElementById('myImage').src='img/bulbon.gif';
+                    }
+                } else {
+                document.getElementById('myImage').src='img/bulbon.gif';
+                }
+            } else {
+                document.getElementById('myImage').src='img/bulbon.gif';
+            }
+        }
+    </script>
+        
+    </body>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>

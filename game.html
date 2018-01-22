@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <title>Maths Game</title>
+        <style type="text/css">
+            a{
+                color: black;
+            }
+            button{
+                background-color: rgba(88, 24, 69,1);
+                color: white;
+            }
+            input{
+                background-color: rgba(255,195,0,1);
+            }
+            
+            .nav{
+                box-sizing: border-box;
+                border-bottom: 2px solid rgba(0,0,0,0.3);
+                border-left: 2px solid rgba(0,0,0,0.3);
+                border-right: 2px solid rgba(0,0,0,0.3);
+                background-color: rgba(255,87,51,1)
+            }
+            .navbar{
+                margin: 0px;
+                border-radius: 0px;
+            }
+            .col-xs-6{
+                background-color: rgba(199,0,57,1);
+                width: 45vw;
+                box-sizing: border-box;
+                border: 5px solid rgba(0,0,0,0.07);
+                border-radius: 30px;
+                padding: 10px;
+            }
+            .row{
+                box-sizing: border-box;
+                padding: 40px;
+                background-color: rgba(144,12,63,1);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Math Game!</a>
+                </div>
+            </div>
+        </nav>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button onclick="setAdditionGame();">Addition Game</button>
+                    <button onclick="setSubtractionGame();">Subtraction Game</button>
+                    <button onclick="setMultiplicationGame();">Multiplication Game</button>
+                    
+                    <p id="score"></p>
+                    <p id="question"></p>
+                    
+                    <form id="myForm" name="answerform" onsubmit="checkAnswer(); return false;" data-gametype="addition" action="#">
+                        Enter Answer: <input type="number" name="answer"/>
+                        <input type="hidden" name="rightAnswer"/>
+                        <input type="submit" value="submit"/>
+                    </form>
+                    
+                    <script type="text/javascript" src="game.js"></script>
+                </div>
+                <div class="col-xs-6">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                    ut aliquip ex ea commodo consequat.
+                </div>
+                <div class="col-xs-6">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                    ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+    </body>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>

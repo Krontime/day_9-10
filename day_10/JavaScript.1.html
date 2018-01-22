@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <title>Java In The Site</title>
+        <style type="text/css">
+            #submitted {
+                display: none;
+                color: green;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<h1 id="result">The result of those numbers is: <span id="total"></span></h1>-->
+        
+        <form name="myForm" onsubmit="formSubmitted">
+            Enter your Name: <input type='text' name='name'/>
+            Enter your Email: <input type='email' name='email'/>
+            <input type="submit" value="submit"/>
+            <p id="submitted">Your form was submitted successfully!</p>
+        </form>
+        
+        
+    <script>
+        
+        function formSubmitted() {
+            document.getElementById("submitted").style.display="block";
+            let name = document.forms["myForm"]["name"].value;
+            let email = document.forms["myForm"]["email"].value;
+            alert("Hey " + name + ", we will respong to you be email by: " + email);
+        }
+    
+    
+    
+    
+    
+        // let num1 = prompt("Enter a Number:");
+        // let multiply = num1 * num2;
+        // document.getElementById("total").textContent = multiply;
+        
+        
+    </script>
+    </body>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
