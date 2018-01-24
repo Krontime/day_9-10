@@ -3,42 +3,61 @@ let scorebox = document.getElementById("score");
 let questionbox = document.getElementById("question");
 let answerform = document.getElementById("myForm");
 
+
+
 function setAdditionGame() {
-    document.getElementById("myForm").setAttribute("data-gametype", "addition");
+    $("#myForm").attr("data-gametype", "addition");
     additionQuiz();
 }
 
 function setSubtractionGame() {
-    document.getElementById("myForm").setAttribute("data-gametype", "subtraction");
+    $("#myForm").attr("data-gametype", "subtraction");
     subtractionQuiz();
 }
 
 function setMultiplicationGame() {
-    document.getElementById("myForm").setAttribute("data-gametype", "multiplication");
+    $("#myForm").attr("data-gametype", "multiplication");
     multiplicationQuiz();
 }
 
 function additionQuiz() {
     let num1 = Math.floor(Math.random() * 50);
     let num2 = Math.floor(Math.random() * 50);
-    questionbox.textContent = "What is: " + num1 + " + " + num2 + "?";
-    answerform["rightAnswer"].value = (num1 + num2);
+    // questionbox.textContent = "What is: " + num1 + " + " + num2 + "?";
+    $("questionbox").text("What is: " + num1 + " + " + num2 + "?");
+    $("[name=rightAnswer]").val() = (num1 + num2);
 }
 
 function checkAnswer() {
-    let gametype = document.getElementById("myForm").getAttribute("data-gametype");
-    if (answerform["answer"].value == answerform["rightAnswer"].value) {
-        alert("Hey! You got it right!")
+    let gametype = $("#myForm").attr("data-gametype");
+    if ($("[name=answer]").val() == $(["name=rightAnswer"]).val()) {
+        // alert("Hey! You got it right!")
+        $("body").append("<div class='message'><h1>'Hey! You got it right!'</h1></div>");
+        $(".message").css("background-color", "green");
+        $(".message").fadeIn(1000);
+        $(".message").fadeOut(1000);
+        $(".message").remove();
         score++
     } else {
         if (score >= 1) {
-            alert("Oh, Sorry! You got it wrong :(")
+            // alert("Oh, Sorry! You got it wrong :(")
+            $("body").append("<div class='message'><h1>'Oh, Sorry! You got it wrong :('</h1></div>");
+            $(".message").css("background-color", "green");
+            $(".message").fadeIn(1000);
+            $(".message").fadeOut(1000);
+            $(".message").remove();
             score--
         } else {
-            alert("Oh, Sorry! You got it wrong :(")
+            $("body").append("<div class='message'><h1>'Oh, Sorry! You got it wrong :('</h1></div>");
+            $(".message").css("background-color", "green");
+            $(".message").fadeIn(1000);
+            $(".message").fadeOut(1000);
+            $(".message").remove();
         }
     }
-    scorebox.textContent = score;
+    $("[name=answer]").val("");
+    $("#score").text("score(score)");
+    // scorebox.textContent = score;
     if (gametype == "addition") {
         additionQuiz()
     }
@@ -62,21 +81,22 @@ function subtractionQuiz() {
         num1 = num2;
         num2 = tempNum;
     }
-    questionbox.textContent = "What is: " + num1 + " - " + num2 + "?";
-    answerform["rightAnswer"].value = (num1 - num2);
+    // questionbox.textContent = "What is: " + num1 + " - " + num2 + "?";
+    $("question").text("What is: " + num1 + " - " + num2 + "?");
+    $("[name=rightAnswer]").val() = (num1 - num2);
 }
 
 function checkAnswer() {
-    let gametype = document.getElementById("myForm").getAttribute("data-gametype");
-    if (answerform["answer"].value == answerform["rightAnswer"].value) {
-        alert("Hey! You got it right!")
+    let gametype = $("#myform").attr("data-gametype");
+    if ($("[name=answer]").val() == $(["name=rightAnswer"]).val()) {
+        alert("Hey! You got it right!");
         score++
     } else {
         if (score >= 1) {
-            alert("Oh, Sorry! You got it wrong :(")
+            alert("Oh, Sorry! You got it wrong :(");
             score--
         } else {
-            alert("Oh, Sorry! You got it wrong :(")
+            alert("Oh, Sorry! You got it wrong :(");
         }
     }
     scorebox.textContent = score;
@@ -98,21 +118,22 @@ subtractionQuiz();
 function multiplicationQuiz() {
     let num1 = Math.floor(Math.random() * 12);
     let num2 = Math.floor(Math.random() * 12);
-    questionbox.textContent = "What is: " + num1 + " x " + num2 + "?";
-    answerform["rightAnswer"].value = (num1 * num2);
+    // questionbox.textContent = "What is: " + num1 + " x " + num2 + "?";
+    $("question").text("What is: " + num1 + " x " + num2 + "?")
+    $("[name=rightAnswer]").val() = (num1 * num2);
 }
 
 function checkAnswer() {
-    let gametype = document.getElementById("myForm").getAttribute("data-gametype");
-    if (answerform["answer"].value == answerform["rightAnswer"].value) {
-        alert("Hey! You got it right!")
+    let gametype = $("#myForm").attr("data-gametype");
+    if ($("[name=answer]").val() == $(["name=rightAnswer"]).val()) {
+        alert("Hey! You got it right!");
         score++
     } else {
         if (score >= 1) {
-            alert("Oh, Sorry! You got it wrong :(")
+            alert("Oh, Sorry! You got it wrong :(");
             score--
         } else {
-            alert("Oh, Sorry! You got it wrong :(")
+            alert("Oh, Sorry! You got it wrong :(");
         }
     }
     scorebox.textContent = score;
